@@ -1,0 +1,97 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article>
+      Casio<br />
+      Casio General MTP-VT01L-2B2UDF MTP-VT01L MTP-VT01 MTPVT01L MTPVT01
+      <br /><br />
+      G-Shock<br />
+      GShock GBD-200SM-1A5DR GBD-200 GBD200SM GBD200 Garansi Resmi 2 Tahun
+      <br /><br />
+      Baby-G BabyG BGA-310-4ADR BGA-310-4 BGA-310 BGA310 Garansi Resmi 2 Tahun
+      <br />
+    </article>
+    <b>G-Shock</b>
+    <br /><br />
+
+    <div class="switch-field">
+      <input
+        type="radio"
+        id="radio-gshock"
+        name="switch-jam"
+        value="1"
+        checked
+      />
+      <label for="radio-gshock">G-Shock</label>
+      <input type="radio" id="radio-babyg" name="switch-jam" value="2" />
+      <label for="radio-babyg">Baby-G</label>
+      <input type="radio" id="radio-casio" name="switch-jam" value="3" />
+      <label for="radio-casio">Casio</label>
+    </div>
+
+    <br /><br />
+
+    <form>
+      Name : <input type="text" id="firstfill" onkeyup="change();" />
+      <!-- <input type="submit" name="generatenm" onclick="Fillmerge(this.form)"> -->
+      <input type="reset" />
+      <br />
+      Generate : <input type="text" id="genName" value="" size="50" />
+      <button onclick="copyTxt()">Copy</button>
+    </form>
+
+    <script>
+      const radioValue = document.querySelector(
+        "input[name=switch-jam]:checked"
+      ).value;
+
+      function change() {
+        switch (Number(radioValue)) {
+          case 1:
+            var src = document.getElementById("firstfill");
+            var src2 = src.value.substring(0, 7);
+            var src3 = src.value.substring(0, 9).replace(/[^\w\s]/gi, "");
+            var src4 = src.value.substring(0, 7).replace(/[^\w\s]/gi, "");
+            var dest = document.getElementById("genName");
+            dest.value = src.value + " " + src2 + " " + src3 + " " + src4;
+            break;
+
+          case 2:
+            var src = document.getElementById("firstfill");
+            var src2 = src.value.substring(0, 9);
+            var src3 = src.value.substring(0, 7);
+            var src4 = src.value.substring(0, 7).replace(/[^\w\s]/gi, "");
+            var dest = document.getElementById("genName");
+            dest.value = src.value + " " + src2 + " " + src3 + " " + src4;
+            break;
+
+          case 3:
+            var src = document.getElementById("firstfill");
+            var src2 = src.value.substring(0, 9);
+            var src3 = src.value.substring(0, 7);
+            var src4 = src.value.substring(0, 7).replace(/[^\w\s]/gi, "");
+            var dest = document.getElementById("genName");
+            dest.value = src.value + " " + src2 + " " + src3 + " " + src4;
+            break;
+        }
+      }
+
+      function copyTxt() {
+        var copyText = document.getElementById("genName");
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
+        // Alert the copied text
+        //alert("Copied the text: " + copyText.value);
+      }
+    </script>
+  </body>
+</html>
