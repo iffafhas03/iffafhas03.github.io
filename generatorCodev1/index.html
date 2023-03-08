@@ -1,0 +1,119 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article>
+      G-Shock<br/>
+      GBD-200SM-1A5DR <br/>
+G-Shock GShock GBD-200SM-1A5DR GBD-200SM GBD-200 GBD200SM GBD 200SM
+<br/>
+GBD-200-1A5DR <br/>
+G-Shock GShock GBD-200-1A5DR GBD-200-1A5 GBD-200 GBD200 GBD 200
+      <br />
+    </article>
+    <br /><br />
+    <b>G-Shock</b>
+    <br /><br />
+
+    <form>
+      Prefix : <input type="text" id="prefix" onkeyup="change();" />
+      Name : <input type="text" id="firstfill" onkeyup="change();" />
+      <!-- <input type="submit" name="generatenm" onclick="Fillmerge(this.form)"> -->
+      <input type="reset" />
+      <br />
+      Generate G-Shock1 : <input type="text" id="genName" value="" size="100" />
+      <br />
+      Generate G-Shock2: <input type="text" id="genName2" value="" size="100" />
+  <!--    <button onclick="copyTxt()">Copy</button> -->
+    </form>
+<br/>
+    WS-1500H-2AVDF </br>
+  Casio General WS-1500H-2AVDF WS-1500H WS-1500 WS1500H WS 1500H </br>
+WS-1500-2AVDF </br>
+Casio General WS-1500-2AVDF WS-1500-2A WS-1500 WS1500 WS 1500 <br>
+<br>
+
+    <b>Casio</b>
+
+    <br /><br />
+
+    <form>
+      Prefix : <input type="text" id="prefix1" onkeyup="change1();" />
+      Name : <input type="text" id="firstfill1" onkeyup="change1();" />
+      <!-- <input type="submit" name="generatenm" onclick="Fillmerge(this.form)"> -->
+      <input type="reset" />
+      <br />
+      Generate Casio : <input type="text" id="genName3" value="" size="100" />
+      <br />
+      Generate Casio: <input type="text" id="genName4" value="" size="100" />
+  <!--    <button onclick="copyTxt()">Copy</button> -->
+    </form>
+    
+    <script>
+    /*  const radioValue = document.querySelector(
+        "input[name=switch-jam]:checked"
+      ).value; */
+
+      function change(){
+            var prx = document.getElementById("prefix");
+            var src = document.getElementById("firstfill");
+            var src2 = src.value.substring(0, 10);
+            var src3 = src.value.substring(0, 8);
+            var src4 = src.value.substring(0, 10).replace(/[^\w\s]/gi, "");
+		var src5 = src.value.substring(0, 9).replace(/[^\w\s]/gi, " ");
+            //2
+            var src6 = src.value.substring(0, 12);
+            //yg kedua src3
+            var src7 = src.value.substring(0, 7);
+            //src3 tanpa strip
+            var src8 = src.value.substring(0, 8).replace(/[^\w\s]/gi, "");
+            var src9 = src.value.substring(0, 8).replace(/[^\w\s]/gi, " ");
+            
+        
+        var dest = document.getElementById("genName");
+            dest.value = prx.value + " " + src.value + " " + src2 + " " + src3 + " " + src4 + " " + src5;
+       
+     var det = document.getElementById("genName2");
+            det.value = prx.value + " " + src.value + " " + src6 + " " + src7 + " " + src8 + " " + src9;
+        };
+      
+      
+      function change1(){
+            var prx = document.getElementById("prefix1");
+            var cas = document.getElementById("firstfill1");
+            var cas2 = cas.value.substring(0, 8);
+            var cas3 = cas.value.substring(0, 7);
+            var cas4 = cas.value.substring(0, 9).replace(/[^\w\s]/gi, "");
+        var cas5 = cas.value.substring(0, 9).replace(/[^\w\s]/gi, " ");
+        
+         var cas6 = cas.value.substring(0, 11);
+          var cas7 = cas.value.substring(0, 8);
+        var cas8 = cas.value.substring(0, 8).replace(/[^\w\s]/gi, "");
+        var cas9 = cas.value.substring(0, 8).replace(/[^\w\s]/gi, " ");
+
+                   
+        var dest = document.getElementById("genName3");
+            dest.value = prx.value + " " + cas.value + " " + cas2 + " " + cas3 + " " + cas4 + " " + cas5;
+       
+     var dest2 = document.getElementById("genName4");
+            dest2.value = prx.value + " " + cas.value + " " + cas6 + " " + cas7 + " " + cas8 + " " + cas9;
+        };
+
+      function copyTxt() {
+        var copyText = document.getElementById("genName");
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
+        // Alert the copied text
+        //alert("Copied the text: " + copyText.value);
+      }
+    </script>
+  </body>
+</html>
