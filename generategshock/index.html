@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article>
+      G-Shock<br/>
+      GBD-200SM-1A5DR
+G-Shock GShock GBD-200SM-1A5DR GBD-200SM GBD-200 GBD200SM GBD 200SM
+<br/>
+GBD-200-1A5DR
+G-Shock GShock GBD-200-1A5DR GBD-200-1A5 GBD-200 GBD200 GBD 200
+      <br />
+    </article>
+    <br /><br />
+    <b>G-Shock</b>
+    <br /><br />
+
+    <form>
+      Prefix : <input type="text" id="prefix" onkeyup="change();" />
+      Name : <input type="text" id="firstfill" onkeyup="change();" />
+      <!-- <input type="submit" name="generatenm" onclick="Fillmerge(this.form)"> -->
+      <input type="reset" />
+      <br />
+      Generate G-Shock1 : <input type="text" id="genName" value="" size="100" />
+      <br />
+      Generate G-Shock2: <input type="text" id="genName2" value="" size="100" />
+  <!--    <button onclick="copyTxt()">Copy</button> -->
+    </form>
+
+    <script>
+    /*  const radioValue = document.querySelector(
+        "input[name=switch-jam]:checked"
+      ).value; */
+
+      function change(){
+            var prx = document.getElementById("prefix");
+            var src = document.getElementById("firstfill");
+            var src2 = src.value.substring(0, 10);
+            var src3 = src.value.substring(0, 8);
+            var src4 = src.value.substring(0, 10).replace(/[^\w\s]/gi, "");
+		var src5 = src.value.substring(0, 9).replace(/[^\w\s]/gi, " ");
+            //2
+            var src6 = src.value.substring(0, 12);
+            //yg kedua src3
+            //src3 tanpa strip
+            var src7 = src.value.substring(0, 8).replace(/[^\w\s]/gi, "");
+            var src8 = src.value.substring(0, 8).replace(/[^\w\s]/gi, " ");
+            
+        
+        var dest = document.getElementById("genName");
+            dest.value = prx.value + " " + src.value + " " + src2 + " " + src3 + " " + src4 + " " + src5;
+       
+     var det = document.getElementById("genName2");
+            det.value = prx.value + " " + src.value + " " + src6 + " " + src3 + " " + src7 + " " + src8;
+        };
+      
+
+      function copyTxt() {
+        var copyText = document.getElementById("genName");
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
+        // Alert the copied text
+        //alert("Copied the text: " + copyText.value);
+      }
+    </script>
+  </body>
+</html>
